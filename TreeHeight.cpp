@@ -1,29 +1,17 @@
 /**
- * Definition for singly-linked list.
- * struct ListNode {
+ * Definition for a binary tree node.
+ * struct TreeNode {
  *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
  * };
  */
-class Solution {
-public:
-    void reverseListUtil(ListNode **head, ListNode *curr, ListNode * prev)
-    {
-            if (!curr)
-                return;
-            reverseListUtil(head, curr->next, curr);
-            if (!curr->next)
-                *head = curr;
-            curr->next = prev;
-    }
-    ListNode* reverseList(ListNode* head) 
-    {
-        if (!head)
-            return NULL;
-        if (!(head->next))
-            return head;
-        reverseListUtil(&head, head, NULL);
-        return head;
-    }
-};
+
+int max(int a, int b)
+{
+    return (a > b ? a : b);
+}
+ 
+int maxDepth(struct TreeNode* root) {
+    return (!root ? 0 : (1 + max(maxDepth(root->left), maxDepth(root->right))));   
+}
