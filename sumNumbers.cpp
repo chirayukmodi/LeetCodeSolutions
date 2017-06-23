@@ -9,7 +9,6 @@ Algo Used :
 2. Recurse for left and right child with passing the sum value.
 3. If we reach to leaf, return the sum.
 4. If we reach to NULL node, return 0.
-
 */
 
 class Solution {
