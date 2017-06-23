@@ -60,3 +60,25 @@ public:
         return v;
     }
 };
+
+/* Recursive Solution */
+
+class Solution {
+public:
+    void rightSideViewUtil(TreeNode *root, vector<int>&v, int node_level)
+    {
+        if (!root)
+            return;
+        if (v.size() == node_level)
+            v.push_back(root->val);
+        
+        rightSideViewUtil(root->right, v, node_level+1);
+        rightSideViewUtil(root->left, v, node_level+1);
+    }
+    vector<int> rightSideView(TreeNode* root) 
+    {
+        vector <int>v;
+        rightSideViewUtil(root,v,0);
+        return v;
+    }
+};
