@@ -51,7 +51,7 @@ Note : Note that once we have found out
        value of i is 5. Note that array[3] is 0. So
        iterator is at that position where array value is 0.
 
-Complexity : O(n)
+Complexity : O(n).
 */
 
 class Solution {
